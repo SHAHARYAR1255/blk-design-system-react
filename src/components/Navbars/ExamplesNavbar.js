@@ -29,11 +29,13 @@ import {
   Container,
   Row,
   Col,
+  Modal,
   UncontrolledTooltip,
 } from "reactstrap";
 
 export default function ExamplesNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const [demoModal, setDemoModal] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
   React.useEffect(() => {
@@ -70,8 +72,8 @@ export default function ExamplesNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" id="navbar-brand" tag={Link}>
-            <span>BLK• </span>
-            Design System React
+            <span>MONTER• </span>
+            Pi Currency Exchange
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
             Designed and Coded by Creative Tim
@@ -112,7 +114,7 @@ export default function ExamplesNavbar() {
             </Row>
           </div>
           <Nav navbar>
-            <NavItem className="p-0">
+            {/* <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
                 href="https://twitter.com/CreativeTim"
@@ -123,8 +125,8 @@ export default function ExamplesNavbar() {
                 <i className="fab fa-twitter" />
                 <p className="d-lg-none d-xl-none">Twitter</p>
               </NavLink>
-            </NavItem>
-            <NavItem className="p-0">
+            </NavItem> */}
+            {/* <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
                 href="https://www.facebook.com/CreativeTim"
@@ -135,12 +137,12 @@ export default function ExamplesNavbar() {
                 <i className="fab fa-facebook-square" />
                 <p className="d-lg-none d-xl-none">Facebook</p>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial"
-                rel="noopener noreferrer"
+                href=""
+                rel="noopener noreferrer"   
                 target="_blank"
                 title="Follow us on Instagram"
               >
@@ -153,23 +155,51 @@ export default function ExamplesNavbar() {
                 className="nav-link d-none d-lg-block"
                 color="primary"
                 target="_blank"
-                href="https://www.creative-tim.com/product/blk-design-system-pro-react?ref=bdsr-examples-navbar-upgrade-pro"
+                onClick={() => setDemoModal(true)}
               >
-                <i className="tim-icons icon-spaceship" /> Upgrade to PRO
+                <i className="tim-icons icon-spaceship" /> Disclaimer
               </Button>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/">
+              {/* <NavLink tag={Link} to="/">
                 Back to Kit
-              </NavLink>
+              </NavLink> */}
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/creativetimofficial/blk-design-system-react/issues">
-                Have an issue?
+              <NavLink href="/contact-us">
+                Contact Us
               </NavLink>
             </NavItem>
           </Nav>
         </Collapse>
+        <Modal isOpen={demoModal} toggle={() => setDemoModal(false)}>
+          <div className="modal-header justify-content-center">
+            <button className="close" onClick={() => setDemoModal(false)}>
+              <i className="tim-icons icon-simple-remove" />
+            </button>
+            <h4 className="title title-up">Announcement</h4>
+          </div>
+          <div className="modal-body">
+            <p>
+              Monter is a private company engaged in the purchase of PI
+              tokens. We do not provide financial advice or guarantee the price
+              or value of any token(s). It is essential to conduct your own
+              research and make informed decisions.
+            </p>
+          </div>
+          <div className="modal-footer">
+              {/* <Button color="default" type="button">
+                Nice Button
+              </Button> */}
+            <Button
+              color="danger"
+              type="button"
+              onClick={() => setDemoModal(false)}
+            >
+              Close
+            </Button>
+          </div>
+        </Modal>
       </Container>
     </Navbar>
   );

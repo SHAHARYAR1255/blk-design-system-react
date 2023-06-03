@@ -46,10 +46,10 @@ export default function Signup() {
   return (
     <div className="section section-signup">
       <Container>
-        <div className="squares square-1" />
+        {/* <div className="squares square-1" />
         <div className="squares square-2" />
         <div className="squares square-3" />
-        <div className="squares square-4" />
+        <div className="squares square-4" /> */}
         <Row className="row-grid justify-content-between align-items-center">
           <Col lg="6">
             <h3 className="display-3 text-white">
@@ -64,8 +64,8 @@ export default function Signup() {
               System.
             </p>
             <div className="btn-wrapper">
-              <Button color="primary" to="register-page" tag={Link}>
-                Register Page
+              <Button color="primary" to="register-page" tag={Link} href="">
+                Message on Instagram
               </Button>
             </div>
           </Col>
@@ -76,7 +76,7 @@ export default function Signup() {
                   alt="..."
                   src={require("assets/img/square-purple-1.png")}
                 />
-                <CardTitle tag="h4">Register</CardTitle>
+                <CardTitle tag="h4">Contact</CardTitle>
               </CardHeader>
               <CardBody>
                 <Form className="form">
@@ -107,14 +107,14 @@ export default function Signup() {
                         <i className="tim-icons icon-email-85" />
                       </InputGroupText>
                     </InputGroupAddon>
-                    <Input
+                    <Input  
                       placeholder="Email"
                       type="text"
                       onFocus={(e) => setEmailFocus(true)}
                       onBlur={(e) => setEmailFocus(false)}
                     />
                   </InputGroup>
-                  <InputGroup
+                  {/* <InputGroup
                     className={classnames({
                       "input-group-focus": passwordFocus,
                     })}
@@ -130,14 +130,14 @@ export default function Signup() {
                       onFocus={(e) => setPasswordFocus(true)}
                       onBlur={(e) => setPasswordFocus(false)}
                     />
-                  </InputGroup>
+                  </InputGroup> */}
                   <FormGroup check className="text-left">
                     <Label check>
                       <Input type="checkbox" />
-                      <span className="form-check-sign" />I agree to the{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                      <span className="form-check-sign" />Not a Robot{" "}
+                      {/* <a href="#pablo" onClick={(e) => e.preventDefault()}>
                         terms and conditions
-                      </a>
+                      </a> */}
                       .
                     </Label>
                   </FormGroup>
